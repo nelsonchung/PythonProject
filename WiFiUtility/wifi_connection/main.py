@@ -74,9 +74,10 @@ def Connect(wifi_ssid_name, wifi_password):
 
 if __name__ == "__main__":
     #Scan()
-    count=1;
+    count=0;
     while True:
         #Connect 24G
+        count+=1;
         print("This is %d time to test" %count)
         print("Trying to connect 24G")
         Connect(SSID_24G_NAME, SSID_24G_PASSWORD)
