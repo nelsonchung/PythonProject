@@ -32,40 +32,46 @@ def print_help():
 	print(helpp)
 	return
 
+def Init(oui, serial, modelname, parameter):
+	m_OUI=oui
+	m_Serial=serial
+	m_ModelName=modelname
+	m_paramter=parameter
+	return
+	
+def Create_Client():
+	m_client = Client(ACS_INFO)
+	return
+
 def Connect(oui, serial, modelname, paramter):
-    return
+	return
 
 def Send_Request():
-    return
+	return
 
 def Set_Parameter():
-    return
+	return
     
 def Get_Parameter():
-    return
+	ArrayOfString =m_client.factory.create('ArrayOfString')
+	ArrayOfString.string = [m_paramter]
+	result=m_client.service.FTGetDeviceParameters(m_Serial, ArrayOfString, SOURCE, m_OUI, m_ModelName, GPN, GPV, GPA, CREATOR, APPID)
+	return return
 
 if __name__ == '__main__':
 	input_num=len(sys.argv)
-	client = Client(ACS_INFO)
-	#result=client.service.FTGetFirmwareVersion("342CC447801A", "5C353B", "AP", "QQ", "")
-	#print(client)
-
-    ##Error handle
+	#Create client object
+	Client()	
+	##Error handle
 	if input_num < 4:
 		print_help()
 		print(client)
 		quit()
+	##Initialize
+	Init(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
 
-	OUI=sys.argv[1]
-	Serial=sys.argv[2]
-	ModelName=sys.argv[3]
-	paramter=sys.argv[4]
-
-	ArrayOfString =client.factory.create('ArrayOfString')
-	ArrayOfString.string = [paramter]
-	#for q in range(50):
-	#FTGetDeviceParameters(xs:string devicesn, ArrayOfString arraynames, xs:int SOURCE, xs:string OUI, xs:string modelname, xs:boolean names, xs:boolean values, xs:boolean attributes, xs:string CREATOR, xs:string APPID)
-	result=client.service.FTGetDeviceParameters(Serial, ArrayOfString, SOURCE, OUI, ModelName, GPN, GPV, GPA, CREATOR, APPID)
+	#Get parameter
+	result=Get_Parameter()
 	if result.ErrorCode != 100:
 		print("error:%s" % result.ErrorCode)
 		quit()
@@ -127,10 +133,7 @@ if __name__ == '__main__':
         	else:
 				print("ErrorCode: %s" % result.Params.ParamWSDL.ErrorCode)
 
-#print(arr_aa)
-#rows = workbook_1.max_row 
-#cols = workbook_1.max_columncolumn_widths = []
-# set column width
+
 	'''
 	for col in workbook_1.columns:
     	max_length = 0
