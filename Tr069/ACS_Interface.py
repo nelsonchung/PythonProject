@@ -33,13 +33,22 @@ def print_help():
 	return
 
 def Init(oui, serial, modelname, parameter):
+	global m_OUI
+	global m_Serial
+	global m_ModelName
+	global m_parameter
 	m_OUI=oui
 	m_Serial=serial
 	m_ModelName=modelname
-	m_paramter=parameter
+	m_parameter=parameter
+        #print("OUI" % m_OUI)
+        #print("Serial" % m_Serial)
+        #print("ModelName" % m_ModelName)
+        #print("Parameter" % m_parameter)
 	return
 	
 def Create_Client():
+        global m_client
 	m_client = Client(ACS_INFO)
 	return
 
@@ -54,14 +63,14 @@ def Set_Parameter():
     
 def Get_Parameter():
 	ArrayOfString =m_client.factory.create('ArrayOfString')
-	ArrayOfString.string = [m_paramter]
+	ArrayOfString.string = [m_parameter]
 	result=m_client.service.FTGetDeviceParameters(m_Serial, ArrayOfString, SOURCE, m_OUI, m_ModelName, GPN, GPV, GPA, CREATOR, APPID)
-	return return
+	return result
 
 if __name__ == '__main__':
 	input_num=len(sys.argv)
 	#Create client object
-	Client()	
+	Create_Client()	
 	##Error handle
 	if input_num < 4:
 		print_help()
@@ -69,6 +78,14 @@ if __name__ == '__main__':
 		quit()
 	##Initialize
 	Init(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+	#global m_OUI
+	#global m_Serial
+	#global m_ModelName
+	#global m_parameter
+	#m_OUI=sys.argv[1]
+	#m_Serial=sys.argv[2]
+	#m_ModelName=sys.argv[3]
+	#m_parameter=sys.argv[4]
 
 	#Get parameter
 	result=Get_Parameter()
