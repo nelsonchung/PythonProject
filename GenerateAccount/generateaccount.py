@@ -60,6 +60,36 @@ last_names = [
     "Zhang", "Zhao", "Wei", "Zhu", "Yu",
     "Xu", "Sun", "Ma", "Lu", "Zhou"
 ]
+# Anson
+#new_first_names = [
+#    "Aaron", "Abigail", "Abraham", "Adam", "Addison",
+#    "Adrian", "Aiden", "Alexa", "Alexandra", "Alexis",
+#    "Alice", "Alyssa", "Amelia", "Andrew", "Angel",
+#    "Angela", "Annabelle", "Anthony", "Austin", "Autumn",
+#    "Ava", "Axel", "Beatrice", "Blake", "Brianna",
+#    "Brooklyn", "Caleb", "Cameron", "Caroline", "Carter",
+#    "Charlotte", "Chloe", "Christian", "Claire", "Colton",
+#    "Cooper", "Daniela", "Delilah", "Dominic", "Dylan",
+#    "Easton", "Eleanor", "Elijah", "Elizabeth", "Ella",
+#    "Emily", "Emma", "Ethan", "Evelyn", "Everly",
+#    "Ezra", "Finn", "Gabriella", "Gianna", "Grace",
+#    "Grayson", "Hailey", "Hannah", "Harper", "Henry",
+#    "Hudson", "Hunter", "Isabel", "Isabella", "Isla",
+#    "Jackson", "Jacob", "James", "Jasmine", "Jayden",
+#    "Joseph", "Joshua", "Julian", "Katherine", "Kaylee",
+#    "Landon", "Layla", "Leah", "Liam", "Lillian",
+#    "Logan", "Lucas", "Lucy", "Mason", "Matthew",
+#    "Mia", "Miles", "Nathan", "Nicholas", "Noah",
+#    "Nora", "Olivia", "Owen", "Penelope", "Piper",
+#    "Riley", "Ryan", "Sadie", "Samuel", "Savannah"
+#]
+
+#additional_last_names = [
+#    "Tsai", "Chiang", "Shih", "Fang", "Ho",
+#    "Kuo", "Yeh", "Liao", "Pan", "Tien",
+#    "Yao", "Tang", "Chou", "Cheng", "Lai",
+#    "Hsiao", "Hsueh", "Su", "Hsieh", "Ko"
+#]
 
 def generate_random_name():
     # Randomly choose a first name and a last name
